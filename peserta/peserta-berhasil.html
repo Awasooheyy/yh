@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f9fe">
+    <title>Data Terkirim | Sistem Daftar Hadir Sosialisasi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="peserta.css">
+    <script src="peserta-berhasil.js" defer></script>
+  </head>
+  <body>
+    <header class="participant-header">
+      <a class="participant-brand" href="peserta.html" aria-label="BPJS Ketenagakerjaan">
+        <img src="../New Logo BPJS Ketenagakerjaan.png" alt="BPJS Ketenagakerjaan">
+      </a>
+      <div class="participant-account" aria-label="Anda masuk sebagai Peserta">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4.75 20a7.25 7.25 0 0 1 14.5 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <span>Peserta</span>
+      </div>
+    </header>
+    <main class="participant-main">
+      <section class="participant-success" id="participant-success" hidden>
+        <span class="participant-success-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="m5 12.5 4.5 4.5L19.5 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <h1>Data Berhasil Dikirim!</h1>
+        <p>Data peserta Anda telah tersimpan. Terima kasih telah berpartisipasi dalam kegiatan sosialisasi.</p>
+        <div class="participant-success-detail">
+          <strong id="success-event-name">Kegiatan Sosialisasi</strong>
+          <span id="success-submission-time"></span>
+        </div>
+        <a class="button button-primary" href="peserta.html">Kembali ke Formulir</a>
+      </section>
+      <section class="unavailable-state" id="submission-unavailable" role="status" hidden>
+        <span class="unavailable-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 8v4m0 4h.01M10.3 3.9 2.7 17.1A2 2 0 0 0 4.4 20h15.2a2 2 0 0 0 1.7-2.9L13.7 3.9a2 2 0 0 0-3.4 0Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <h1>Data pengiriman tidak ditemukan</h1>
+        <p>Silakan isi dan kirim formulir peserta terlebih dahulu.</p>
+        <a class="button button-primary" href="peserta.html">Kembali ke Formulir</a>
+      </section>
+    </main>
+  </body>
+</html>

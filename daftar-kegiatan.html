@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7fafe">
+    <title>Daftar Kegiatan | Sistem Daftar Hadir Sosialisasi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/app.js" defer></script>
+    <script src="daftar-kegiatan.js" defer></script>
+  </head>
+  <body class="column-setup-page">
+    <header class="choice-header">
+      <a class="bpjs-brand" href="index.html" aria-label="BPJS Ketenagakerjaan">
+        <img class="bpjs-logo" src="New Logo BPJS Ketenagakerjaan.png" alt="BPJS Ketenagakerjaan">
+      </a>
+      <div class="event-header-actions">
+        <a class="employee-nav-link is-active" href="daftar-kegiatan.html" aria-current="page"><span class="employee-nav-full">Daftar Kegiatan</span><span class="employee-nav-short">Kegiatan</span></a>
+        <div class="choice-account"><span class="choice-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4.75 20a7.25 7.25 0 0 1 14.5 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span>Pegawai</span></div>
+        <a class="event-back-link" href="berhasil.html"><span aria-hidden="true"></span> Kembali</a>
+      </div>
+    </header>
+    <main class="activity-list-main">
+      <div class="activity-list-heading">
+        <div>
+          <span class="eyebrow">WORKSPACE PEGAWAI</span>
+          <h1>Daftar Kegiatan</h1>
+          <p>Kelola kegiatan sosialisasi yang telah dibuat.</p>
+        </div>
+        <a class="button button-primary" href="pilih-daftar.html"> <span>Tambah Kegiatan</span></a>
+      </div>
+      <div class="activity-list-error" id="activity-list-error" role="alert" hidden></div>
+      <section class="activity-list-card">
+        <div class="activity-list-card-heading">
+          <h2>Semua Kegiatan</h2>
+          <span id="activity-count">0 kegiatan</span>
+        </div>
+        <div class="activity-list" id="activity-list"></div>
+      </section>
+      <footer class="event-info-footer">© 2026 Sistem Daftar Hadir Sosialisasi <span>·</span> Data tersimpan lokal</footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7fafe">
+    <title>Kegiatan Berhasil Dibuat | Sistem Daftar Hadir Sosialisasi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/app.js" defer></script>
+    <script src="berhasil.js" defer></script>
+  </head>
+  <body class="column-setup-page">
+    <header class="choice-header">
+      <a class="bpjs-brand" href="index.html" aria-label="BPJS Ketenagakerjaan">
+        <img class="bpjs-logo" src="New Logo BPJS Ketenagakerjaan.png" alt="BPJS Ketenagakerjaan">
+      </a>
+      <div class="event-header-actions">
+        <a class="employee-nav-link" href="daftar-kegiatan.html" aria-label="Daftar Kegiatan"><span class="employee-nav-full">Daftar Kegiatan</span><span class="employee-nav-short">Kegiatan</span></a>
+        <div class="choice-account">
+          <span class="choice-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4.75 20a7.25 7.25 0 0 1 14.5 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+          <span>Pegawai</span>
+        </div>
+      </div>
+    </header>
+    <main class="success-page-main">
+      <section class="success-final-card" aria-labelledby="success-title">
+        <div class="success-final-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none">
+            <circle class="success-circle" cx="24" cy="24" r="21"/>
+            <path class="success-check" d="m13.5 24.5 7 7L35 17"/>
+          </svg>
+        </div>
+        <span class="eyebrow">KEGIATAN SIAP DIGUNAKAN</span>
+        <h1 id="success-title">Kegiatan Berhasil Dibuat!</h1>
+        <p class="success-final-description">Data kegiatan telah disimpan. Peserta sekarang dapat mengisi form sesuai daftar yang telah dipilih.</p>
+
+        <div class="success-event-summary">
+          <div class="success-summary-row">
+            <span>Nama Kegiatan</span>
+            <strong id="success-event-name">Sosialisasi Program ASN Banyuwangi Berbagi</strong>
+          </div>
+          <div class="success-summary-row">
+            <span>Tanggal</span>
+            <strong id="success-event-date">31 Juli 2026</strong>
+          </div>
+          <div class="success-summary-row">
+            <span>Waktu</span>
+            <strong id="success-event-time">09.00 - Selesai</strong>
+          </div>
+          <div class="success-summary-row">
+            <span>Daftar yang Aktif</span>
+            <div class="success-list-badges" id="success-list-badges">
+              <span class="success-list-badge">Daftar Hadir</span>
+              <span class="success-list-badge">Suvenir</span>
+              <span class="success-list-badge">Uang Saku</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="success-final-actions">
+          <a class="button button-primary" href="daftar-kegiatan.html">Lihat Daftar Kegiatan <span aria-hidden="true"></span></a>
+          <button class="button button-secondary" id="new-event-button" type="button"><span aria-hidden="true">＋</span> Buat Kegiatan Baru</button>
+        </div>
+      </section>
+      <footer class="event-info-footer">© 2026 Sistem Daftar Hadir Sosialisasi <span>·</span> Data tersimpan lokal</footer>
+    </main>
+  </body>
+</html>

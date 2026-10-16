@@ -1,0 +1,141 @@
+  <!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7faff">
+    <title>Login Pegawai | Sistem Daftar Hadir Sosialisasi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/app.js" defer></script>
+    <script src="login.js" defer></script>
+  </head>
+
+  <body class="login-page">
+    <main class="login-layout">
+      <section class="login-intro" aria-labelledby="product-title">
+        <a class="bpjs-brand" href="index.html" aria-label="BPJS Ketenagakerjaan">
+          <img class="bpjs-logo" src="New Logo BPJS Ketenagakerjaan.png" alt="BPJS Ketenagakerjaan">
+        </a>
+
+        <div class="intro-copy">
+          <span class="intro-kicker">PORTAL ADMINISTRASI KEGIATAN</span>
+          <h1 id="product-title">Sistem Daftar Hadir <span>Sosialisasi</span></h1>
+          <p>Lebih mudah, lebih cepat, lebih efisien untuk setiap kegiatan.</p>
+        </div>
+
+        <div class="document-art" aria-hidden="true">
+          <div class="art-orbit orbit-one"></div>
+          <div class="art-orbit orbit-two"></div>
+          <div class="art-spark spark-one"></div>
+          <div class="art-spark spark-two"></div>
+          <div class="art-sheet sheet-back"></div>
+
+          <div class="art-sheet sheet-front">
+            <div class="sheet-top"><span></span><span></span><span></span></div>
+            <div class="sheet-title-line"></div>
+            <div class="sheet-line"></div>
+            <div class="sheet-line short"></div>
+            <div class="sheet-table">
+              <span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="sheet-signature"><span></span><span></span></div>
+          </div>
+
+          <div class="art-check">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="m6 12.5 4 4L18.5 8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <div class="art-calendar">
+            <span class="calendar-head"></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="intro-footer">
+          <span class="intro-footer-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 3.75 19 6.5v5.25c0 4.1-2.85 7.1-7 8.5-4.15-1.4-7-4.4-7-8.5V6.5l7-2.75Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>Administrasi kegiatan, tersusun rapi dan aman.</span>
+        </div>
+      </section>
+
+      <section class="login-side" aria-labelledby="login-title">
+        <div class="login-top-note">
+          <span class="login-top-dot"></span>
+          <span class="login-top-label">Portal pegawai</span>
+        </div>
+
+        <div class="login-card">
+          <div class="login-card-heading">
+            <span class="login-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4.75 20a7.25 7.25 0 0 1 14.5 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <h2 id="login-title">Login</h2>
+            <p>Masuk sebagai pegawai untuk mengelola kegiatan sosialisasi.</p>
+          </div>
+
+          <div class="login-role-switch" role="group" aria-label="Pilih jenis login">
+            <button class="login-role-option is-selected" type="button" data-login-role="pegawai" aria-pressed="true">Pegawai</button>
+            <button class="login-role-option" type="button" data-login-role="peserta" aria-pressed="false">Peserta</button>
+          </div>
+
+          <form id="login-form" novalidate>
+            <label class="login-field">
+              <span>Username</span>
+              <span class="login-input-wrap">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4.75 20a7.25 7.25 0 0 1 14.5 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+                <input id="username" name="username" type="text" autocomplete="username" placeholder="Masukkan username" aria-describedby="login-error" required>
+              </span>
+            </label>
+
+            <label class="login-field">
+              <span>Password</span>
+              <span class="login-input-wrap">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="5.25" y="10" width="13.5" height="10" rx="2" stroke="currentColor" stroke-width="1.7"/>
+                  <path d="M8 10V7.25a4 4 0 0 1 8 0V10M12 14v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+                <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Masukkan password" aria-describedby="login-error" required>
+
+                <button class="password-toggle" id="password-toggle" type="button" aria-label="Tampilkan password" aria-pressed="false">
+                  <svg class="eye-open" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M2.75 12s3.3-6 9.25-6 9.25 6 9.25 6-3.3 6-9.25 6-9.25-6-9.25-6Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                    <circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.7"/>
+                  </svg>
+
+                  <svg class="eye-closed" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="m3 3 18 18M10.6 6.2c.45-.13.92-.2 1.4-.2 5.95 0 9.25 6 9.25 6a16 16 0 0 1-2.8 3.4M6.2 6.8C3.95 8.3 2.75 12 2.75 12s3.3 6 9.25 6c1.1 0 2.1-.2 3-.53M9.9 9.9a3 3 0 0 0 4.2 4.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </span>
+            </label>
+
+            <p class="login-error" id="login-error" role="alert" aria-live="polite" hidden></p>
+            <button class="login-submit" type="submit">Masuk</button>
+          </form>
+          <a class="back-home" href="index.html"> 
+            Kembali ke beranda</a>
+          <p class="demo-hint" id="demo-hint">
+            Demo login: <strong>pegawai</strong> / <strong>pegawai123</strong>
+          </p>
+        </div>
+        <footer class="login-footer">© 2026 Sistem Daftar Hadir Sosialisasi</footer>
+      </section>
+    </main>
+  </body>
+</html>
+```

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7fafe">
+    <title>Atur Kolom Data | Sistem Daftar Hadir Sosialisasi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/app.js" defer></script>
+    <script src="atur-kolom.js" defer></script>
+  </head>
+  <body class="column-setup-page">
+    <header class="choice-header">
+      <a class="bpjs-brand" href="index.html" aria-label="BPJS Ketenagakerjaan">
+        <img class="bpjs-logo" src="New Logo BPJS Ketenagakerjaan.png" alt="BPJS Ketenagakerjaan">
+      </a>
+      <div class="event-header-actions">
+        <a class="employee-nav-link" href="daftar-kegiatan.html" aria-label="Daftar Kegiatan"><span class="employee-nav-full">Daftar Kegiatan</span><span class="employee-nav-short">Kegiatan</span></a>
+        <div class="choice-account"><span class="choice-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4.75 20a7.25 7.25 0 0 1 14.5 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span>Pegawai</span></div>
+        <a class="event-back-link" href="informasi-kegiatan.html"><span aria-hidden="true">←</span> Kembali</a>
+      </div>
+    </header>
+    <main class="column-setup-main">
+      <nav class="workflow-progress" aria-label="Progress pembuatan kegiatan">
+        <a class="workflow-step is-complete" href="pilih-daftar.html"><span class="workflow-number" aria-hidden="true">✓</span><span>Pilih Daftar</span></a>
+        <span class="workflow-connector is-complete" aria-hidden="true"></span>
+        <a class="workflow-step is-complete" href="informasi-kegiatan.html"><span class="workflow-number" aria-hidden="true">✓</span><span>Informasi Kegiatan</span></a>
+        <span class="workflow-connector is-complete" aria-hidden="true"></span>
+        <span class="workflow-step is-active" aria-current="step"><span class="workflow-number">3</span><span>Atur Kolom</span></span>
+        <span class="workflow-connector" aria-hidden="true"></span>
+        <span class="workflow-step"><span class="workflow-number">4</span><span>Konfirmasi</span></span>
+      </nav>
+      <div class="column-setup-heading">
+        <span class="eyebrow">LANGKAH 3 DARI 4</span>
+        <h1>Atur Kolom Data</h1>
+        <p>Sesuaikan kolom yang akan ditampilkan pada form peserta untuk setiap jenis daftar.</p>
+        <div class="column-event-date" id="column-event-date"></div>
+      </div>
+      <div class="choice-error" id="column-error" role="alert" aria-live="polite" hidden></div>
+      <div class="column-setup-groups" id="column-groups"></div>
+      <div class="column-setup-actions">
+        <a class="button button-quiet" href="informasi-kegiatan.html">Kembali</a>
+        <button class="button button-primary" type="button" id="columns-continue">Lanjut</button>
+      </div>
+
+      <div class="column-modal-backdrop" id="column-modal" role="dialog" aria-modal="true" aria-labelledby="column-modal-title" aria-hidden="true" hidden>
+        <div class="column-modal-card">
+          <button class="column-modal-close" id="column-modal-close" type="button" aria-label="Tutup">×</button>
+          <span class="column-modal-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </span>
+          <h2 id="column-modal-title">Tambah Kolom</h2>
+          <p class="column-modal-description" id="column-modal-description">Tambahkan kolom baru untuk daftar ini.</p>
+          <p class="column-modal-error" id="column-modal-error" role="alert" aria-live="polite" hidden></p>
+          <form id="column-modal-form">
+            <label class="field" for="new-column-name">
+              <span>Nama Kolom <span class="required">*</span></span>
+              <input id="new-column-name" name="columnName" type="text" maxlength="40" placeholder="Contoh: Instansi" required>
+            </label>
+            <div class="column-modal-actions">
+              <button class="button button-secondary" id="column-modal-cancel" type="button">Batal</button>
+              <button class="button button-primary" id="column-modal-submit" type="submit">Tambahkan</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <footer class="event-info-footer">© 2026 Sistem Daftar Hadir Sosialisasi <span>·</span> Data tersimpan lokal</footer>
+    </main>
+  </body>
+</html>

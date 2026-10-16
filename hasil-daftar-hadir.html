@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <title>Cetak Daftar Hadir | Sistem Daftar Hadir Sosialisasi</title>
+    <link rel="stylesheet" href="css/hasil-daftar-hadir.css">
+    <script src="js/hasil-daftar-hadir.js" defer></script>
+  </head>
+  <body>
+    <nav class="page-actions" aria-label="Navigasi halaman">
+      <a id="back-link" href="daftar-kegiatan.html">← Kembali</a>
+      <button id="print-button" type="button">Cetak Daftar Hadir</button>
+    </nav>
+
+    <main class="page-main">
+      <section id="unavailable" class="notice" role="alert" hidden>
+        <h1>Daftar hadir tidak tersedia</h1>
+        <p>Kegiatan yang dipilih tidak ditemukan atau tidak mengaktifkan Daftar Hadir.</p>
+        <a href="daftar-kegiatan.html">Kembali ke Daftar Kegiatan</a>
+      </section>
+
+      <article id="attendance-form" class="attendance-form" aria-label="Formulir Daftar Hadir" hidden>
+        <header class="form-header">
+          <div class="form-logo">
+            <img src="New Logo BPJS Ketenagakerjaan.png" alt="BPJS Ketenagakerjaan">
+          </div>
+          <div class="form-title">
+            <strong>FORMULIR</strong>
+            <span>Tanggal dikeluarkan :</span>
+          </div>
+          <div class="form-list-name">DAFTAR HADIR</div>
+        </header>
+
+        <section class="event-information" aria-label="Informasi kegiatan">
+          <div class="event-row">
+            <span>Agenda</span><span class="event-colon">:</span><strong id="event-agenda"></strong>
+          </div>
+          <div class="event-row">
+            <span>Hari/Tanggal</span><span class="event-colon">:</span><strong id="event-date"></strong>
+          </div>
+          <div class="event-row">
+            <span>Waktu</span><span class="event-colon">:</span><strong id="event-time"></strong>
+          </div>
+          <div class="event-row">
+            <span>Tempat</span><span class="event-colon">:</span><strong id="event-location"></strong>
+          </div>
+          <div id="address-row" class="event-row address-row" hidden>
+            <span></span><span class="event-colon"></span><strong id="event-address"></strong>
+          </div>
+        </section>
+
+        <div class="table-scroll">
+          <table class="attendance-table">
+            <colgroup id="attendance-columns"></colgroup>
+            <thead id="attendance-head"></thead>
+            <tbody id="attendance-body"></tbody>
+          </table>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

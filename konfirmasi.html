@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7fafe">
+    <title>Konfirmasi Data | Sistem Daftar Hadir Sosialisasi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/app.js" defer></script>
+    <script src="konfirmasi.js" defer></script>
+  </head>
+  <body class="column-setup-page">
+    <header class="choice-header">
+      <a class="bpjs-brand" href="index.html" aria-label="BPJS Ketenagakerjaan">
+        <img class="bpjs-logo" src="New Logo BPJS Ketenagakerjaan.png" alt="BPJS Ketenagakerjaan">
+      </a>
+      <div class="event-header-actions">
+        <a class="employee-nav-link" href="daftar-kegiatan.html" aria-label="Daftar Kegiatan"><span class="employee-nav-full">Daftar Kegiatan</span><span class="employee-nav-short">Kegiatan</span></a>
+        <div class="choice-account"><span class="choice-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4.75 20a7.25 7.25 0 0 1 14.5 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span>Pegawai</span></div>
+        <a class="event-back-link" href="atur-kolom.html"><span aria-hidden="true">←</span> Kembali</a>
+      </div>
+    </header>
+    <main class="confirmation-main">
+      <nav class="workflow-progress" aria-label="Progress pembuatan kegiatan">
+        <a class="workflow-step is-complete" href="pilih-daftar.html"><span class="workflow-number" aria-hidden="true">✓</span><span>Pilih Daftar</span></a>
+        <span class="workflow-connector is-complete" aria-hidden="true"></span>
+        <a class="workflow-step is-complete" href="informasi-kegiatan.html"><span class="workflow-number" aria-hidden="true">✓</span><span>Informasi Kegiatan</span></a>
+        <span class="workflow-connector is-complete" aria-hidden="true"></span>
+        <a class="workflow-step is-complete" href="atur-kolom.html"><span class="workflow-number" aria-hidden="true">✓</span><span>Atur Kolom</span></a>
+        <span class="workflow-connector is-complete" aria-hidden="true"></span>
+        <span class="workflow-step is-active" aria-current="step"><span class="workflow-number">4</span><span>Konfirmasi</span></span>
+      </nav>
+      <div class="confirmation-heading" id="confirmation-heading">
+        <span class="eyebrow">LANGKAH 4 DARI 4</span>
+        <h1>Konfirmasi Data</h1>
+        <p>Periksa kembali data kegiatan sebelum disimpan.</p>
+      </div>
+      <section class="confirmation-summary">
+        <article class="summary-card">
+          <div class="summary-card-heading">
+            <span class="summary-card-icon blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M8 5.5h11M8 12h11M8 18.5h11M4.75 5.5h.5M4.75 12h.5M4.75 18.5h.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </span>
+            <h2>Jenis Daftar yang Dipilih</h2>
+          </div>
+          <div class="selected-list-badges" id="selected-list-badges"></div>
+        </article>
+
+        <article class="summary-card">
+          <div class="summary-card-heading">
+            <span class="summary-card-icon violet" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5.25" width="16" height="15" rx="2.25" stroke="currentColor" stroke-width="1.7"/><path d="M8 3.75v3M16 3.75v3M4 9.25h16M8 13h3M8 16.5h7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </span>
+            <h2>Informasi Kegiatan</h2>
+          </div>
+          <div class="event-summary-grid" id="event-summary"></div>
+        </article>
+
+        <article class="summary-card">
+          <div class="summary-card-heading">
+            <span class="summary-card-icon green" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4.75" width="16" height="14.5" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M4.5 9.5h15M10 9.75v9M15 9.75v9" stroke="currentColor" stroke-width="1.5"/></svg>
+            </span>
+            <h2>Pengaturan Kolom</h2>
+          </div>
+          <div class="summary-columns" id="column-summary"></div>
+        </article>
+      </section>
+      <div class="confirmation-actions">
+        <a class="button button-quiet" href="atur-kolom.html">Kembali</a>
+        <button class="button button-primary" id="confirm-event" type="button">
+          <span class="save-button-label">Simpan</span>
+          <span class="save-button-spinner" aria-hidden="true"></span>
+        </button>
+      </div>
+      <p class="confirmation-save-error" id="save-error" role="alert" aria-live="polite" hidden></p>
+      <footer class="event-info-footer">© 2026 Sistem Daftar Hadir Sosialisasi <span>·</span> Data tersimpan lokal</footer>
+    </main>
+  </body>
+</html>

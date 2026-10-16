@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7fafe">
+    <title>Informasi Kegiatan | Sistem Daftar Hadir Sosialisasi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/app.js" defer></script>
+    <script src="informasi-kegiatan.js" defer></script>
+  </head>
+  <body class="event-info-page">
+    <header class="choice-header">
+      <a class="bpjs-brand" href="index.html" aria-label="BPJS Ketenagakerjaan">
+        <img class="bpjs-logo" src="New Logo BPJS Ketenagakerjaan.png" alt="BPJS Ketenagakerjaan">
+      </a>
+      <div class="event-header-actions">
+        <a class="employee-nav-link" href="daftar-kegiatan.html" aria-label="Daftar Kegiatan"><span class="employee-nav-full">Daftar Kegiatan</span><span class="employee-nav-short">Kegiatan</span></a>
+        <div class="choice-account">
+          <span class="choice-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4.75 20a7.25 7.25 0 0 1 14.5 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+          <span>Pegawai</span>
+        </div>
+        <a class="event-back-link" href="pilih-daftar.html"><span aria-hidden="true">←</span> Kembali</a>
+      </div>
+    </header>
+
+    <main class="event-info-main">
+      <nav class="workflow-progress" aria-label="Progress pembuatan kegiatan">
+        <a class="workflow-step is-complete" href="pilih-daftar.html">
+          <span class="workflow-number" aria-hidden="true">✓</span><span>Pilih Daftar</span>
+        </a>
+        <span class="workflow-connector is-complete" aria-hidden="true"></span>
+        <span class="workflow-step is-active" aria-current="step">
+          <span class="workflow-number">2</span><span>Informasi Kegiatan</span>
+        </span>
+        <span class="workflow-connector" aria-hidden="true"></span>
+        <span class="workflow-step">
+          <span class="workflow-number">3</span><span>Atur Kolom</span>
+        </span>
+        <span class="workflow-connector" aria-hidden="true"></span>
+        <span class="workflow-step">
+          <span class="workflow-number">4</span><span>Konfirmasi</span>
+        </span>
+      </nav>
+
+      <div class="event-info-heading">
+        <span class="eyebrow">LANGKAH 2 DARI 4</span>
+        <h1>Informasi Kegiatan</h1>
+        <p>Lengkapi detail kegiatan sosialisasi yang akan dibuat.</p>
+      </div>
+      <section class="event-info-card">
+        <form id="event-form" novalidate>
+          <div class="event-info-fields">
+            <label class="field" for="event-name">
+              <span>Nama Kegiatan <span class="required">*</span></span>
+              <input id="event-name" name="eventName" type="text" placeholder="Contoh: Sosialisasi Program ASN Banyuwangi Berbagi" aria-describedby="event-name-error" required>
+              <small class="field-error" id="event-name-error" hidden></small>
+            </label>
+            <label class="field" for="event-date">
+              <span>Tanggal <span class="required">*</span></span>
+              <input id="event-date" name="eventDate" type="date" aria-describedby="event-date-error" required>
+              <small class="field-error" id="event-date-error" hidden></small>
+            </label>
+            <label class="field" for="event-time">
+              <span>Waktu <span class="required">*</span></span>
+              <input id="event-time" name="eventTime" type="text" placeholder="09.00 - Selesai" aria-describedby="event-time-error" required>
+              <small class="field-error" id="event-time-error" hidden></small>
+            </label>
+            <label class="field" for="event-location">
+              <span>Tempat <span class="required">*</span></span>
+              <input id="event-location" name="eventLocation" type="text" placeholder="Contoh: Kantor BPJS Ketenagakerjaan Cabang Banyuwangi" aria-describedby="event-location-error" required>
+              <small class="field-error" id="event-location-error" hidden></small>
+            </label>
+            <label class="field allowance-amount-field" for="event-allowance-amount" id="allowance-amount-field" hidden>
+              <span>Nominal Uang Saku per Peserta <span class="required">*</span></span>
+              <input id="event-allowance-amount" name="allowanceAmount" type="number" min="0" step="1000" inputmode="numeric" placeholder="Contoh: 150000" aria-describedby="event-allowance-amount-error">
+              <small class="field-error" id="event-allowance-amount-error" hidden></small>
+              <small class="field-hint">Nominal yang ditentukan pegawai untuk setiap peserta.</small>
+            </label>
+          </div>
+          <div class="event-info-actions">
+            <span class="required-note"><span class="required">*</span> Wajib diisi</span>
+            <button class="button button-primary" type="submit">Lanjut
+          </div>
+        </form>
+      </section>
+      <footer class="event-info-footer">© 2026 Sistem Daftar Hadir Sosialisasi <span>·</span> Data tersimpan lokal</footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7fafe">
+    <title>Hasil Kegiatan | Sistem Daftar Hadir Sosialisasi</title>
+    <link rel="stylesheet" href="css/hasil-daftar-hadir.css">
+    <link rel="stylesheet" href="css/hasil-kegiatan.css">
+    <script src="js/app.js" defer></script>
+    <script src="hasil-kegiatan.js" defer></script>
+  </head>
+  <body class="results-page">
+    <main class="page-main results-main">
+      <div class="page-actions results-toolbar-top">
+        <a class="results-back-link" href="daftar-kegiatan.html">← Kembali ke Daftar Kegiatan</a>
+        <div class="results-actions">
+          <button id="print-results" type="button">Cetak Daftar Hadir</button>
+          <button id="export-results" type="button">Ekspor CSV</button>
+        </div>
+      </div>
+      <div id="results-unavailable" class="results-unavailable" role="alert" hidden>
+        <h1>Kegiatan tidak ditemukan</h1>
+        <p>Data kegiatan yang dipilih tidak tersedia di penyimpanan lokal.</p>
+        <a class="button button-primary" href="daftar-kegiatan.html">Kembali ke Daftar Kegiatan</a>
+      </div>
+
+      <div id="results-content" hidden>
+        <div class="results-sheet-tools">
+          <label class="results-search">
+            <span>Cari peserta</span>
+            <input id="participant-search" type="search" placeholder="Cari nama atau nilai kolom">
+          </label>
+          <p id="participant-count" aria-live="polite">0 peserta</p>
+        </div>
+
+        <section class="attendance-form results-sheet" aria-label="Lembar hasil kegiatan">
+          <div class="form-header sheet-top">
+            <div class="form-logo sheet-brand">
+              <img src="New Logo BPJS Ketenagakerjaan.png" alt="BPJS Ketenagakerjaan">
+            </div>
+            <div class="form-title sheet-form-title">
+              <strong>FORMULIR</strong>
+              <span id="issued-date">Tanggal dikeluarkan :</span>
+            </div>
+            <div class="form-list-name sheet-list-title" id="active-list-title"></div>
+          </div>
+
+          <div id="list-tabs" class="results-tabs" role="tablist" aria-label="Jenis daftar"></div>
+
+          <div class="event-information sheet-event-details">
+            <div class="event-row"><span>Agenda</span><b>:</b><strong id="event-name"></strong></div>
+            <div class="event-row"><span>Hari/Tanggal</span><b>:</b><strong id="event-date"></strong></div>
+            <div class="event-row"><span>Waktu</span><b>:</b><strong id="event-time"></strong></div>
+            <div class="event-row"><span>Tempat</span><b>:</b><strong id="event-location"></strong></div>
+            <div id="address-row" class="event-row address-row" hidden><span></span><b></b><strong id="event-address"></strong></div>
+          </div>
+
+          <div class="table-scroll results-table-wrap">
+            <table class="attendance-table results-table">
+              <colgroup id="results-table-columns"></colgroup>
+              <thead id="results-table-head"></thead>
+              <tbody id="results-table-body"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+      <footer class="event-info-footer">© 2026 Sistem Daftar Hadir Sosialisasi <span>·</span> Data tersimpan lokal</footer>
+    </main>
+
+    <dialog id="ktp-dialog" class="ktp-dialog" aria-labelledby="ktp-dialog-title">
+      <div class="ktp-dialog-heading">
+        <h2 id="ktp-dialog-title">Foto KTP Peserta</h2>
+        <button id="close-ktp-dialog" type="button" aria-label="Tutup foto KTP">Tutup</button>
+      </div>
+      <img id="ktp-dialog-image" alt="Foto KTP peserta">
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f9fe">
+    <title>Form Peserta | Sistem Daftar Hadir Sosialisasi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="peserta.css">
+    <script src="peserta.js" defer></script>
+  </head>
+  <body>
+    <header class="participant-header">
+      <a class="participant-brand" href="peserta.html" aria-label="BPJS Ketenagakerjaan">
+        <img src="../New Logo BPJS Ketenagakerjaan.png" alt="BPJS Ketenagakerjaan">
+      </a>
+      <div class="participant-account" aria-label="Anda masuk sebagai Peserta">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4.75 20a7.25 7.25 0 0 1 14.5 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <span>Peserta</span>
+        <svg class="account-chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7 10 5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </header>
+
+    <main class="participant-main">
+      <div class="unavailable-state" id="unavailable-state" role="status" hidden>
+        <span class="unavailable-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 8v4m0 4h.01M10.3 3.9 2.7 17.1A2 2 0 0 0 4.4 20h15.2a2 2 0 0 0 1.7-2.9L13.7 3.9a2 2 0 0 0-3.4 0Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <h1>Kegiatan tidak tersedia</h1>
+        <p>Data kegiatan belum tersedia atau sudah tidak dapat diakses.</p>
+        <button class="button button-outline" id="unavailable-back" type="button">Kembali</button>
+      </div>
+
+      <div id="participant-content" hidden>
+        <section class="welcome-section" aria-labelledby="welcome-title">
+          <div class="welcome-message">
+            <svg class="welcome-illustration" viewBox="0 0 120 112" fill="none" role="img" aria-label="Ilustrasi clipboard daftar periksa">
+              <path d="M18 78c-10-12-5-31 7-39 5-3 9-9 10-16 2-10 14-16 24-11 8 4 14 3 21-1 13-8 29 1 29 16 0 7 3 12 8 17 11 11 8 29-4 37-7 5-11 11-12 19H32c-1-9-6-16-14-22Z" fill="#DCEEFF"/>
+              <path d="M35 23a6 6 0 0 1 4-6l10-3a6 6 0 0 1 7 4l3 9-20 6-4-10Z" fill="#A9D1FF"/>
+              <path d="m43 24 30-8a5 5 0 0 1 6 4l17 65a5 5 0 0 1-4 6l-39 10a5 5 0 0 1-6-4L39 30a5 5 0 0 1 4-6Z" fill="#1677FF"/>
+              <path d="m47 30 28-7 15 59-28 7-15-59Z" fill="white"/>
+              <path d="m52 40 5-1m-3 12 5-1m-3 12 5-1m-3 12 5-1" stroke="#9BB6D5" stroke-width="2" stroke-linecap="round"/>
+              <path d="m61 40 16-4m-13 16 16-4m-13 16 16-4m-13 16 16-4" stroke="#C3D5EA" stroke-width="2" stroke-linecap="round"/>
+              <path d="m61 51 2 2 4-5m-1 17 2 2 4-5" stroke="#21A77A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M29 83 22 78m74-45 7-5M27 52l-8-2m80 53 7 2" stroke="#A8D1FA" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="26" cy="34" r="3" fill="#68B4FF"/><circle cx="99" cy="22" r="3" fill="#68B4FF"/><circle cx="103" cy="76" r="2" fill="#68B4FF"/>
+            </svg>
+            <div>
+              <h1 id="welcome-title">Selamat Datang!</h1>
+              <p>Silakan lengkapi data diri Anda untuk mengikuti kegiatan sosialisasi.</p>
+            </div>
+          </div>
+          <section class="event-card" aria-labelledby="event-title">
+            <div class="event-card-heading">
+              <span class="event-main-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="16" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M7.5 3v4m9-4v4M3.5 9h17M8 13h3m-3 4h3m3-4h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+              <h2 id="event-title">Informasi Kegiatan</h2>
+            </div>
+            <dl class="event-details" id="event-details"></dl>
+          </section>
+        </section>
+
+        <form class="participant-card" id="participant-form" novalidate>
+          <section class="form-section participant-data-section" aria-labelledby="data-title">
+            <div class="section-heading">
+              <span class="section-icon user-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4.75 20a7.25 7.25 0 0 1 14.5 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+              <div><h2 id="data-title">Data Peserta</h2><p>Masukkan data diri Anda dengan benar.</p></div>
+            </div>
+            <div class="participant-fields" id="participant-fields"></div>
+            <div class="allowance-fixed-amount" id="allowance-fixed-amount" hidden></div>
+          </section>
+
+          <section class="form-section signature-section" aria-labelledby="signature-title">
+            <div class="section-heading">
+              <span class="section-icon pen-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m14.5 5.5 4 4m-13.8 9.8 4.2-.8L20 7.4a2.83 2.83 0 0 0-4-4L4.9 15.2l-.8 4.1ZM4 21h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div><h2 id="signature-title">Tanda Tangan</h2><p>Lakukan tanda tangan sesuai daftar yang akan digunakan.</p></div>
+            </div>
+            <div class="signature-grid" id="signature-grid"></div>
+          </section>
+
+          <section class="form-section ktp-section" aria-labelledby="ktp-title">
+            <div class="section-heading">
+              <span class="section-icon upload-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div><h2 id="ktp-title">Upload Foto KTP <span class="optional-mark">(Opsional)</span></h2><p>Pastikan foto KTP terlihat jelas dan tidak buram.</p></div>
+            </div>
+            <input class="visually-hidden" id="ktp-file" type="file" accept=".jpg,.jpeg,.png,image/jpeg,image/png">
+            <div class="upload-area" id="upload-area" role="button" tabindex="0" aria-label="Pilih atau seret file foto KTP">
+              <div class="upload-prompt" id="upload-prompt">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="2" stroke="currentColor" stroke-width="1.7"/><circle cx="9" cy="9" r="1.5" stroke="currentColor" stroke-width="1.5"/><path d="m5 18 5-5 3 3 2-2 4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <strong>Klik untuk mengunggah foto KTP</strong>
+                <span>atau seret file ke sini</span>
+                <small>Format: JPG, PNG <span>·</span> Maks. 2MB</small>
+              </div>
+              <div class="upload-preview" id="upload-preview" hidden>
+                <img id="ktp-preview-image" alt="Pratinjau foto KTP">
+                <div class="upload-file-info"><strong id="ktp-file-name"></strong><span id="ktp-file-size"></span></div>
+                <button class="remove-file-button" id="remove-ktp" type="button">Hapus file</button>
+              </div>
+            </div>
+            <p class="inline-error upload-error" id="ktp-error" role="alert" hidden></p>
+          </section>
+
+          <p class="form-message" id="form-message" role="alert" aria-live="polite" hidden></p>
+          <div class="form-actions">
+            <button class="button button-outline" id="back-button" type="button"><span aria-hidden="true">←</span> Kembali</button>
+            <button class="button button-primary" id="submit-button" type="submit">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m21 3-7.2 18-3.9-7.9L2 9.2 21 3Zm0 0L9.9 13.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Kirim Data</span>
+            </button>
+          </div>
+        </form>
+        <footer class="participant-footer">© 2026 Sistem Daftar Hadir Sosialisasi</footer>
+      </div>
+    </main>
+  </body>
+</html>

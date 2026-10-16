@@ -1,0 +1,376 @@
+.results-main {
+  margin-top: 0;
+}
+
+.results-toolbar-top {
+  margin: 16px auto;
+}
+
+.results-toolbar-top .results-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.results-toolbar-top button {
+  min-height: 38px;
+  padding: 0 15px;
+  color: #174a8b;
+  background: #fff;
+  border: 1px solid #cbd7e5;
+  border-radius: 5px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.results-toolbar-top #export-results {
+  color: #fff;
+  background: #1769e0;
+  border-color: #145fc9;
+}
+
+.results-toolbar-top #export-results:hover {
+  background: #115ac6;
+}
+
+.results-sheet-tools {
+  display: flex;
+  width: 92%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 0 auto 8px;
+  color: #111;
+  font-size: 12px;
+}
+
+.results-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.results-search input {
+  width: min(38vw, 280px);
+  min-height: 30px;
+  padding: 0 9px;
+  border: 1px solid #cbd0d5;
+  border-radius: 3px;
+  background: #fff;
+  color: #111;
+  font: inherit;
+}
+
+#participant-count {
+  margin: 0;
+  color: #555;
+}
+
+.results-sheet {
+  margin-top: 0;
+}
+
+.results-tabs {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 5px 0;
+  color: #111;
+  background: #fff;
+  border-bottom: 1px solid #d5d5d5;
+}
+
+.results-tabs[hidden] {
+  display: none;
+}
+
+.results-tab {
+  padding: 6px 10px;
+  color: #333;
+  background: #f4f4f4;
+  border: 1px solid #c8c8c8;
+  border-radius: 3px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+}
+
+.results-tab.is-active {
+  color: #111;
+  background: #e2e2e2;
+  font-weight: 700;
+}
+
+.results-table th[data-sort-key] {
+  cursor: pointer;
+}
+
+.results-table th[data-sort-key]:focus-visible {
+  outline: 2px solid #1769e0;
+  outline-offset: -2px;
+}
+
+.results-signature {
+  display: block;
+  width: min(100%, 110px);
+  height: 42px;
+  margin: auto;
+  object-fit: contain;
+}
+
+.sheet-blank-row td {
+  height: 50px;
+}
+
+.results-unavailable {
+  padding: 28px;
+  color: #111;
+  border: 1px solid #d8dee7;
+  text-align: center;
+}
+
+.results-unavailable h1 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.results-unavailable p {
+  color: #555;
+}
+
+.results-unavailable a {
+  color: #174a8b;
+}
+
+.ktp-dialog {
+  width: min(720px, calc(100% - 28px));
+  max-height: 90vh;
+  padding: 15px;
+  border: 1px solid #c7c7c7;
+  border-radius: 6px;
+  box-shadow: 0 18px 60px rgb(0 0 0 / 25%);
+}
+
+.ktp-dialog::backdrop {
+  background: rgb(0 0 0 / 50%);
+}
+
+.ktp-dialog-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.ktp-dialog-heading h2 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.ktp-dialog-heading button {
+  padding: 6px 10px;
+  background: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ktp-dialog img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(90vh - 75px);
+  margin: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  .results-main {
+    width: calc(100% - 24px);
+  }
+
+  .results-toolbar-top,
+  .results-sheet-tools {
+    width: 100%;
+  }
+
+  .results-toolbar-top {
+    align-items: flex-start;
+  }
+
+  .results-toolbar-top .results-actions {
+    gap: 5px;
+  }
+
+  .results-toolbar-top button {
+    min-height: 34px;
+    padding: 0 9px;
+    font-size: 12px;
+  }
+
+  .results-sheet-tools {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .results-search {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .results-search input {
+    width: min(80vw, 320px);
+  }
+}
+
+@media print {
+  .results-toolbar-top,
+  .results-sheet-tools,
+  .results-tabs,
+  .event-info-footer,
+  .results-ktp-button,
+  .ktp-dialog {
+    display: none !important;
+  }
+
+  .results-main {
+    width: 92%;
+    margin: 7mm auto 0;
+  }
+
+  .results-sheet {
+    width: 100%;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 8mm;
+  }
+
+  html,
+  body {
+    width: auto;
+    min-width: 0;
+    margin: 0;
+    background: #fff;
+  }
+
+  .results-page {
+    padding: 0;
+    background: #fff;
+    color: #111;
+    font-family: Arial, Helvetica, sans-serif;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .results-main {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .results-sheet {
+    width: 100%;
+    margin: 0;
+    overflow: visible;
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .sheet-top {
+    min-height: 80px;
+    grid-template-columns: 32fr 30fr 38fr;
+    grid-template-rows: 48px 30px;
+    gap: 1px;
+    padding: 1px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .sheet-brand {
+    padding: 6px 10px;
+  }
+
+  .sheet-brand img {
+    width: min(100%, 250px);
+    max-height: 68px;
+  }
+
+  .sheet-form-title strong,
+  .sheet-list-title {
+    font-size: 11px;
+  }
+
+  .sheet-form-title span {
+    min-height: 28px;
+    font-size: 9px;
+  }
+
+  .sheet-event-details {
+    padding: 7px 3% 9px;
+    font-size: 9px;
+    line-height: 1.25;
+    background: none;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .sheet-event-details > div {
+    min-height: 14px;
+    grid-template-columns: minmax(100px, 24%) 9px minmax(0, 1fr);
+  }
+
+  .results-table-wrap {
+    width: 100%;
+    overflow: visible;
+  }
+
+  .results-table {
+    width: 100%;
+    min-width: 0;
+    table-layout: fixed;
+    border-collapse: collapse;
+    color: #111;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+  }
+
+  .results-table thead {
+    display: table-row-group !important;
+  }
+
+  .results-table th,
+  .results-table td {
+    height: 34px;
+    min-height: 34px;
+    padding: 3px 5px;
+    border: 1px solid #222;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  .results-table th {
+    height: 30px;
+    min-height: 30px;
+    background: #e7ebf2 !important;
+    font-size: 7pt;
+  }
+
+  .results-table tbody tr,
+  .results-table td {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .results-signature {
+    width: min(100%, 70px);
+    height: 25px;
+  }
+
+  .sheet-blank-row td {
+    height: 34px;
+  }
+}
